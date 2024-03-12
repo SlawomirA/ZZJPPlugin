@@ -1,0 +1,40 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+  <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+  <id>com.example.Base64</id>
+
+  <!-- Public plugin name should be written in Title Case.
+       Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+  <name>Base64</name>
+
+  <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+  <vendor email="242349@edu.p.lodz.pl">PŁ</vendor>
+
+  <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+       Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+       Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+  <description><![CDATA[
+Convert base64-encoded programs into txt, xlsx, pdf, zip formats, or extract the contents of the archive.
+  ]]></description>
+
+  <!-- Product and plugin compatibility requirements.
+       Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <!-- Extension points defined by the plugin.
+       Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+  <extensions defaultExtensionNs="com.intellij">
+
+  </extensions>
+
+  <actions>
+    <group id="Base64Group" text="Convert base64" popup="true">
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+      <action id="base64txt" class="com.example.base64.Base64ToTxt" text="to TXT"/>
+      <action id="base64xlsx" class="com.example.base64.Base64ToXlsx" text="to XLSX"/>
+      <action id="base64pdf" class="com.example.base64.Base64ToPDF" text="to PDF"/>
+      <action id="base64zip" class="com.example.base64.Base64ToZip" text="to ZIP"/>
+      <action id="base64archive" class="com.example.base64.Base64ToArchive" text="to Archive"/>
+    </group>
+  </actions>
+</idea-plugin>
